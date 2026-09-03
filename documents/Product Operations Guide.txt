@@ -1,0 +1,25 @@
+SyncFlow Pro v2.0 - Operations & Setup Guide
+Document Category: Product Guide
+Last Updated: January 10, 2026
+
+OVERVIEW
+SyncFlow Pro is an automated ETL data orchestration engine designed to sync relational database tables with cloud storage buckets in near real-time.
+
+1. PREREQUISITES & DEPLOYMENT
+SyncFlow Pro requires a minimum system specification of 4 vCPUs, 16 GB RAM, and Docker Engine v24.0 or higher.
+To deploy via Docker Compose, set the environment variable `SYNCFLOW_ENV=production` and run:
+`docker-compose -f docker-compose.prod.yml up -d`
+
+2. CONFIGURE DATA PIPELINES
+Data pipelines are configured using YAML files stored in the `/config/pipelines/` directory. 
+Key properties required for each pipeline:
+- `source_db`: Connection string for PostgreSQL or MySQL.
+- `destination_bucket`: AWS S3 bucket name or Azure Blob container name.
+- `sync_interval_cron`: Cron expression defining execution frequency (e.g., `0 */1 * * *` for hourly execution).
+
+3. TROUBLESHOOTING COMMON ERRORS
+- Error Code `SF-101 (Database Lock Timeout)`: Occurs when a target table is locked by an ongoing long-running transaction. Resolution: Adjust `lock_timeout_seconds` in `syncflow.json` from default 30 to 120.
+- Error Code `SF-204 (Rate Limit Exceeded)`: Occurs when destination cloud storage APIs drop connections. Resolution: Enable exponential backoff in pipeline settings by adding `retry_policy: exponential`.
+
+4. CONTACT & SUPPORT
+For enterprise support inquiries or custom connector requests, contact the developer support team at `support@syncflow.io` or visit the internal developer portal at `https://docs.syncflow.io`.

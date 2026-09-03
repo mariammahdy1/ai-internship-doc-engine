@@ -1,0 +1,22 @@
+INCIDENT LOG: #INC-4022
+Urgency Level: High
+Status: Closed / Resolved
+Reported Date: June 02, 2026 - 08:14 UTC
+Affected Service: Authentication Service / OAuth2 Token Vault
+Primary Engineer: Sarah Chen (DevOps / Infrastructure)
+
+DESCRIPTION:
+At 08:10 UTC, automated health checks triggered a high-severity alert indicating that the primary user authentication service was returning HTTP 500 Internal Server Errors for approximately 35% of inbound login attempts. API response latency spiked from an average of 45ms to 3200ms.
+
+ROOT CAUSE ANALYSIS:
+A deployment script (v3.4.1) pushed at 07:55 UTC updated the Redis session store connection pool. Due to a misconfigured connection limit parameter (`max_connections=50` instead of `max_connections=5000`), the worker nodes exhausted the available socket connections during peak traffic, causing incoming authentication requests to queue and time out.
+
+RESOLUTION STEPS:
+1. At 08:22 UTC, Engineer Sarah Chen rolled back the deployment script from release v3.4.1 to stable release v3.4.0.
+2. At 08:28 UTC, the connection pool configuration was corrected in the staging environment (`max_connections=5000`).
+3. At 08:45 UTC, post-fix regression tests passed, and patch v3.4.2 was deployed to production.
+4. System metrics returned to nominal status at 08:50 UTC (100% login success rate, average latency restored to 42ms).
+
+PREVENTIVE ACTION ITEMS:
+- Add mandatory schema verification step for environment configuration files before deployment pipelines run.
+- Increase Redis health check reporting frequency from 60s to 10s.

@@ -1,0 +1,23 @@
+[
+    {
+        "document": "Product Operations Guide.txt",
+        "input_tokens": 691,
+        "output_tokens": 241,
+        "total_tokens": 1634,
+        "estimated_cost": 0.0
+    },
+    {
+        "document": "Technical Support Log.txt",
+        "input_tokens": 689,
+        "output_tokens": 299,
+        "total_tokens": 2184,
+        "estimated_cost": 0.0
+    },
+    {
+        "document": "Vendor Contract.txt",
+        "input_tokens": 638,
+        "output_tokens": 281,
+        "total_tokens": 1899,
+        "estimated_cost": 0.0
+    }
+]

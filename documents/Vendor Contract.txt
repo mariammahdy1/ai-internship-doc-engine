@@ -1,0 +1,19 @@
+MASTER SERVICES AGREEMENT (MSA)
+Contract ID: MSA-2026-NX89
+Effective Date: March 15, 2026
+Provider: Nexus Enterprise Solutions LLC
+Client: Apex Logistics Ltd.
+
+1. SCOPE OF SERVICES
+Nexus Enterprise Solutions agrees to provide Apex Logistics with cloud infrastructure optimization, 24/7 database monitoring, and custom microservice development. Any additional out-of-scope tasks require a formal Change Order approved by both parties.
+
+2. FINANCIAL TERMS & PAYMENT SCHEDULING
+- Base Retainer: Apex Logistics shall pay a monthly retainer fee of $18,500 USD.
+- Payment Schedule: Invoices will be generated on the 1st business day of each calendar month and must be settled within net-30 days via wire transfer.
+- Late Payment Penalty: Late payments beyond 30 days will accrue interest at a rate of 1.5% per month on the outstanding balance.
+
+3. SLA & SYSTEM AVAILABILITY
+Nexus guarantees a 99.95% operational uptime for core database routing layers. If monthly uptime drops below 99.95%, Apex Logistics is entitled to a service credit equivalent to 5% of the monthly retainer for every 0.1% of downtime, capped at a maximum 25% credit per billing cycle.
+
+4. TERMINATION & RENEWAL
+This agreement runs for 12 months, expiring on March 14, 2027. Either party may terminate this agreement without cause by providing a written 60-day notice. Immediate termination is permitted in the event of a material breach uncured within 14 days of written notice.
