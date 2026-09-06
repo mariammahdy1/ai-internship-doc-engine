@@ -1,0 +1,6 @@
+google-genai==2.19.0
+pydantic==2.13.4
+python-dotenv==1.2.3
+qdrant-client==1.19.0
+tiktoken==0.14.0
+numpy==2.4.6
