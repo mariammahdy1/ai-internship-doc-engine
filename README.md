@@ -78,3 +78,10 @@ Run:
 
 ```bash
 python tests\test_queries.py
+
+## Environment Setup
+
+1. Create and activate a Python virtual environment.
+
+```bash
+python -m venv .venv
